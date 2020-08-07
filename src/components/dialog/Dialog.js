@@ -30,7 +30,8 @@ export default function FormDialog() {
 
 
   const handleAdd = () =>{
-    var datetime = new Date()
+    if(titleRef.current.value !== '' && notesRef.current.value !== ''){
+      var datetime = new Date()
     setData([...data , {
         id: uniqid(),
         title: titleRef.current.value,
@@ -38,6 +39,8 @@ export default function FormDialog() {
         time: datetime,
     }])
     setOpen(false);
+    }
+    
   }
 
   return (
