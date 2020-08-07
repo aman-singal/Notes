@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Notes from '../notes/Notes'
-import NotesList from '../noteslist/NotesList'
-import AddNotes from '../addnotes/AddNotes'
+import React, { useState } from 'react';
+import Notes from '../notes/Notes';
+import NotesList from '../noteslist/NotesList';
+import AddNotes from '../addnotes/AddNotes';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
