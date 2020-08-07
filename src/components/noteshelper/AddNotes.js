@@ -4,7 +4,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@material-ui/core/TextField";
 import Dialog from '../dialog/Dialog'
-import {StateContext} from '../main/Main'
+import {StateContext} from '../main/Main.js'
 
 function AddNotes() {
     const {currentSearch} = useContext(StateContext)
