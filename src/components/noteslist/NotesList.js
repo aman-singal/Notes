@@ -3,6 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import {StateContext} from '../main/Main'
+import moment from 'moment'
+import 'moment-timezone';
+import ListItemText  from '@material-ui/core/ListItemText'
+import Typography from '@material-ui/core/Typography'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -32,8 +37,12 @@ export default function SimpleList() {
     }
    
   })
-  console.log(modifiedData)
-  console.log(search)
+
+  const timeCalculator = (creationTime) =>{
+    let currentTime  = moment(creationTime).fromNow()
+
+    return currentTime
+  }
 
   return (
     <div className={classes.root}>
@@ -42,8 +51,8 @@ export default function SimpleList() {
           
           modifiedData.map(item =>{
               return(
-                <ListItem button key={item.id} onClick={() => clickHandler(item.id)}>
-                {item.title}
+                <ListItem button key={item.id} onClick={() => clickHandler(item.id)} >
+                <ListItemText disableTypography primary={<Typography type="heading2" style={{ color: 'black' , display: 'inline' }}>{item.title}</Typography>} secondary={<Typography style={{display: 'inline' , marginLeft: '50%'}}>{timeCalculator(item.time)}</Typography>} />
                 </ListItem>
               )
               
