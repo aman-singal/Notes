@@ -1,8 +1,8 @@
-import React  , { useContext}  from 'react'
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import SearchIcon from "@material-ui/icons/Search";
-import TextField from "@material-ui/core/TextField";
+import React  , { useContext}  from './node_modules/react'
+import IconButton from "./node_modules/@material-ui/core/IconButton";
+import InputAdornment from "./node_modules/@material-ui/core/InputAdornment";
+import SearchIcon from "./node_modules/@material-ui/icons/Search";
+import TextField from "./node_modules/@material-ui/core/TextField";
 import Dialog from '../dialog/Dialog'
 import {StateContext} from '../main/Main'
 
