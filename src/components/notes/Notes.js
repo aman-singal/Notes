@@ -18,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
     
   }))
 
-
-
 function Notes() {
 
   const [notes,setNotes] = useState('')
@@ -54,7 +52,7 @@ function Notes() {
       let rawData = {
           id: data[index].id,
           title: data[index].title,
-          notes: notes,
+          notes: e.target.value,
           time: dateTime,
       }
       let newData = data
