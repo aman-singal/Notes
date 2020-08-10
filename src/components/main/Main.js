@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState  , useLayoutEffect , useEffect} from 'react';
 import Notes from '../notes/Notes';
 import NotesList from '../noteslist/NotesList';
 import AddNotes from '../noteshelper/AddNotes';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import ls from 'local-storage'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +22,24 @@ const StateContext = React.createContext()
 
 const Main =() => {
 
-    const [state,setState] = useState([])
-    const [id,setID] = useState('')
-    const [search,setSearch] = useState("")
+  const [state,setState] = useState([])
+  const [id,setID] = useState('')
+  const [search,setSearch] = useState("")
+
+    useLayoutEffect(() => {
+
+      let localData = ls.get('data')
+      if(localData !== null){
+        setState([...localData])
+      }
+      
+    }, [])
+
+    useEffect(() => {
+      ls('data' , [...state])
+    }, [state])
+
+    
 
     const classes = useStyles();
     return (

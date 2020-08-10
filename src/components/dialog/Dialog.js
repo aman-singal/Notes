@@ -1,4 +1,4 @@
-import React , {useContext, useRef} from 'react';
+import React , {useContext, useRef , useLayoutEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -20,7 +20,6 @@ export default function FormDialog() {
   const notesRef = useRef("")
 
   const handleClickOpen = () => {
-      console.log(data)
     setOpen(true);
   };
 
@@ -30,7 +29,7 @@ export default function FormDialog() {
 
 
   const handleAdd = () =>{
-    if(titleRef.current.value !== '' && notesRef.current.value !== ''){
+    if(titleRef.current.value !== ''){
       var datetime = new Date()
     setData([...data , {
         id: uniqid(),
@@ -71,7 +70,6 @@ export default function FormDialog() {
             label="Note"
             type="text"
             fullWidth
-            required
             inputRef={notesRef} 
           />
         </DialogContent>
